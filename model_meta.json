@@ -1,0 +1,145 @@
+{
+  "features": [
+    "hour_of_day",
+    "is_transfer",
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "origin_balance_change",
+    "destination_balance_change",
+    "empties_origin"
+  ],
+  "modelled_types": [
+    "CASH_OUT",
+    "TRANSFER"
+  ],
+  "all_types": [
+    "CASH_IN",
+    "CASH_OUT",
+    "DEBIT",
+    "PAYMENT",
+    "TRANSFER"
+  ],
+  "threshold": 0.55,
+  "review_cost": 25.0,
+  "fraud_by_type": [
+    {
+      "type": "CASH_IN",
+      "transactions": 1399284,
+      "fraud": 0,
+      "fraud_rate": 0.0
+    },
+    {
+      "type": "CASH_OUT",
+      "transactions": 2237500,
+      "fraud": 4116,
+      "fraud_rate": 0.0018395530726256983
+    },
+    {
+      "type": "DEBIT",
+      "transactions": 41432,
+      "fraud": 0,
+      "fraud_rate": 0.0
+    },
+    {
+      "type": "PAYMENT",
+      "transactions": 2151495,
+      "fraud": 0,
+      "fraud_rate": 0.0
+    },
+    {
+      "type": "TRANSFER",
+      "transactions": 532909,
+      "fraud": 4097,
+      "fraud_rate": 0.007687991758442811
+    }
+  ],
+  "split_steps": {
+    "train_max": 281.0,
+    "val_max": 354.0
+  },
+  "metrics": {
+    "validation": {
+      "rows": 544998,
+      "fraud_cases": 762,
+      "fraud_rate_pct": 0.1398,
+      "pr_auc": 0.899,
+      "roc_auc": 0.9995,
+      "threshold": 0.55,
+      "precision": 0.0803,
+      "recall": 0.9974,
+      "f1": 0.1486,
+      "accuracy": 0.984015,
+      "always_legit_accuracy": 0.998602,
+      "pct_fraud_dollars_caught": 100.0,
+      "pct_transactions_flagged": 1.7376,
+      "confusion_matrix": {
+        "tn": 535526,
+        "fp": 8710,
+        "fn": 2,
+        "tp": 760
+      }
+    },
+    "test": {
+      "rows": 552504,
+      "fraud_cases": 4258,
+      "fraud_rate_pct": 0.7707,
+      "pr_auc": 0.9542,
+      "roc_auc": 0.9991,
+      "threshold": 0.55,
+      "precision": 0.3046,
+      "recall": 0.996,
+      "f1": 0.4665,
+      "accuracy": 0.982442,
+      "always_legit_accuracy": 0.992293,
+      "pct_fraud_dollars_caught": 99.99,
+      "pct_transactions_flagged": 2.5203,
+      "confusion_matrix": {
+        "tn": 538562,
+        "fp": 9684,
+        "fn": 17,
+        "tp": 4241
+      }
+    },
+    "test_at_0.5": {
+      "rows": 552504,
+      "fraud_cases": 4258,
+      "fraud_rate_pct": 0.7707,
+      "pr_auc": 0.9542,
+      "roc_auc": 0.9991,
+      "threshold": 0.5,
+      "precision": 0.2632,
+      "recall": 0.9974,
+      "f1": 0.4165,
+      "accuracy": 0.978464,
+      "always_legit_accuracy": 0.992293,
+      "pct_fraud_dollars_caught": 99.99,
+      "pct_transactions_flagged": 2.9203,
+      "confusion_matrix": {
+        "tn": 536358,
+        "fp": 11888,
+        "fn": 11,
+        "tp": 4247
+      }
+    }
+  },
+  "test_cost": {
+    "no_model": 6702594765.360001,
+    "threshold_0.5": 716439.33,
+    "tuned": 1161778.75
+  },
+  "feature_importance": {
+    "origin_balance_change": 0.38370001316070557,
+    "empties_origin": 0.16859999299049377,
+    "newbalanceDest": 0.1671999990940094,
+    "amount": 0.06539999693632126,
+    "oldbalanceOrg": 0.06499999761581421,
+    "newbalanceOrig": 0.05570000037550926,
+    "is_transfer": 0.031099999323487282,
+    "hour_of_day": 0.029100000858306885,
+    "destination_balance_change": 0.02539999969303608,
+    "oldbalanceDest": 0.008700000122189522
+  }
+}
